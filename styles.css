@@ -1,0 +1,146 @@
+/* BACKGROUND & CONTAINER */
+
+body {
+  background-color: #e6e6e6;
+  margin: 0;
+  height: 100vh;
+}
+
+#content {
+  width: 90.4%;
+  background-color: #fff;
+  margin: auto;
+  height: 97%;
+  border-radius: 19px 0px 0px 0px;
+  padding: 35px 40px 35px 40px;
+}
+
+.container {
+  margin: 0;
+}
+
+#progress {
+  font-family: "Noto Sans";
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-left: 70px;
+  color: #4d4e50;
+}
+
+
+/* HEADINGS & TEXT */
+
+h1,h2 {
+  font-family: "Ubuntu";
+}
+
+h2 {
+  font-size: 20px;
+  margin-left: 2px;
+  color: #4d4e50;
+}
+
+h1 {
+  color: #51ba49;
+  font-size: 35px;
+  letter-spacing: -0.8px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: "Noto Sans";
+  width: 53%;
+  font-size: 19px;
+  padding-left: 6px;
+  line-height: 22px;
+}
+
+
+/* NEXT -BUTTON */
+
+#nextpage {
+  padding-top: 9px;
+  margin-left: -1px;
+}
+
+#nextpage:hover {
+  opacity: 0.8;
+}
+
+
+/* GRAPH */
+
+#graph {
+  float: right;
+  margin-right: 20px;
+}
+
+#graphleft,
+#graphright {
+  margin: 0 -20px 0 -20px;
+}
+
+h1#subhead {
+  color: #4d4e50;
+  font-size: 30px;
+  width: 260px;
+  text-align: center;
+}
+
+.box,
+.bluebox,
+.yelbox {
+  font-family: "Ubuntu";
+  color: #fff;
+  text-align: center;
+  font-size: 25px;
+  width: 260px;
+  line-height: 25px;
+  margin: 0;
+}
+
+.box {
+  background-color: #51ba49;
+  padding: 20px 30px 20px 30px;
+}
+
+.bluebox {
+  background-color: #008bab;
+}
+
+.yelbox {
+  background-color: #f59024;
+  padding: 40px 0 40px 0;
+}
+
+#blue1 {
+  padding: 12px 30px 12px 30px;
+}
+
+#blue2 {
+  padding: 30px;
+}
+
+#plus {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #e05314;
+  margin: 8px 100px 8px 100px;
+  font-family: "Noto Sans";
+  color: #fff;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 15px;
+  padding-right: 6px;
+}
+
+#btmbox {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#arrow {
+  margin-top: 135px;
+}
