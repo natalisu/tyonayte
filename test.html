@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>NWC Training game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Ubuntu:700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/dragula/dist/dragula.css">
+</head>
+
+<body>
+  <div class="content">
+
+    <!-- HEADINGS & PARAGRAPH -->
+
+    <div class="container">
+      <div class="row">
+        <h2>What is Net Working Capital (NWC)?</h2>
+      </div>
+      <div class="row">
+        <h1>Core components of Net Working Capital</h1>
+      </div>
+
+      <div id="fadeInTest">
+      <div class="row">
+        <div class="col-5">
+          <p id="test1">
+            The main components of NWC are described on the chart below. Drag components of NWC from below the graph to corresponding descriptions.
+          </p>
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="col-5">
+          <p id="test2">
+            You will also be given statements concerning all components and your task is to choose whether the statement is true or false.
+          </p>
+        </div>
+      </div>
+
+      <!-- GRAPH HEADING -->
+
+      <div class="row" id="blackbox">
+        <h1 id="boxtxt">Net Working Capital</h1>
+      </div>
+
+      <!-- GRAPH LINES -->
+
+      <div id="verticalLine">
+      </div>
+
+      <div id="horizontalLine">
+      </div>
+
+      <div class="row">
+        <div id="verticalLine1">
+        </div>
+
+        <div id="verticalLine2">
+        </div>
+
+        <div id="verticalLine3">
+        </div>
+
+        <div id="verticalLine4">
+        </div>
+      </div>
+
+      <!-- GRAPH COLUMNS -->
+
+      <div class="row">
+        <div class="col column" id="col1">
+          <div class="colhead">
+            <p class="heading" id="head1">
+            </p>
+          </div>
+          <div class="colbody">
+            <p class="coltext">
+              Refers to the money our customers owe to us in exchange for the products and services we have sold and provided. They are funds which we have earned but not yet collected. They typically increase when the business grows.
+            </p>
+          </div>
+        </div>
+
+        <div class="col column" id="col2">
+          <div class="colhead">
+            <p class="heading" id="head2">
+            </p>
+          </div>
+          <div class="colbody">
+            <p class="coltext">
+              Refers to the quantity of goods and materials company has in stock. Inventory usually consists of four main elements:<br />
+              <font color='#E05314'>
+                • Raw Materials and Components<br /> • Work-In-Process (WIP)<br /> • Finished Goods<br /> • Spare Parts and Consumables</font><br /> Inventories tend to increase when business grows but the turnover of inventories (Net sales divided by
+              inventories or Cost Of Goods Sold divided by inventories) should not be negatively affected.
+            </p>
+          </div>
+        </div>
+
+        <div class="col column" id="col3">
+          <div class="colhead">
+            <p class="heading" id="head3">
+            </p>
+          </div>
+          <div class="colbody">
+            <p class="coltext">
+              Represents the money we owe to our suppliers in exchange for material, components, services and various supplies received. They are the funds we owe but have not yet paid, and they typically increase as the business grows.
+            </p>
+          </div>
+        </div>
+
+        <div class="col column" id="col4">
+          <div class="colhead">
+            <p class="heading" id="head4">
+            </p>
+          </div>
+          <div class="colbody">
+            <p class="coltext">
+              Represents the money we have received in advance from our customer in exchange for the products and services we have committed to deliver. They are funds we have received but not yet earned.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DRAGGABLE BOXES -->
+
+      <div class="row dragboxes">
+        <div class="col" id="db1">
+          <div class="dragbase">
+              <p class="dragtext dragbox" id="opt1">
+                Accounts receivable
+              </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="dragbase">
+            <p class="dragtext dragbox" id="opt2">
+                Accounts payable
+              </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="dragbase">
+              <p class="dragtext dragbox" id="opt3">
+                Advances received (and progress payments)
+              </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="dragbase">
+              <p class="dragtext dragbox" id="opt4">
+                Inventory
+              </p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+  </div>
+
+  <b id="progress">progress:</b>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
