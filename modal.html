@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Ubuntu:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body style="background-color: white;">
+
+    <div class="colhead">
+        <div class="heading ui-widget-header" id="head1">
+            <p id="plus2">+</p>
+            <p class="headtext">Accounts receivable</p>
+        </div>
+    </div>
+
+    <!--
+<div class="modal fade" id="modal1">
+        <div class="modal-header">
+            <p class="mtext" id="headtxt">
+
+            </p>
+            <form class="buttons" id="btns">
+                <button class="trueFalse" id="truebtn" value="true">True</button>
+                <b class="btnText">or</b>
+                <button class="trueFalse" id="falsebtn" value="false">False</button>
+            </form>
+        </div>
+        <div class="modal-body">
+            <p class="mtext" id="bodytxt">
+
+            </p>
+            <div class="nextbtn">
+                <img class="nextbtn1" src="nextbtn1.png">
+                <img class="nextbtn2" src="nextbtn2.png">
+            </div>
+        </div>
+    </div>
+
+-->
+
+
+</body>
+
+
+<script>
+    var q11 = "Receivables are a result of timing difference between manufacturing the product or providing the service and receiving the compensation for that."
+    var c11 = "Correct! This statement is true. This timing difference can be decreased by establishing shorter payment terms for our sales and partly offset by asking for down payment and progress payments from the customers.";
+    var i11 = "Incorrect. This statement is true. This timing difference can be decreased by establishing shorter payment terms for our sales and partly offset by asking for down payment and progress payments from the customers.";
+
+    var trueFalse = "<button class='trueFalse' id='truebtn' value='true' type='button'>True</button> <b class='btnText'>or</b> <button class='trueFalse' id='falsebtn' value='false' type='button'>False</button>";
+    var btns = "<div class='nextbtn'><img class='nextbtn1' src='nextbtn1.png'><img class='nextbtn2' src='nextbtn2.png'></div>";
+
+    var head = document.getElementById("headtxt");
+    var buttons = document.getElementById("btns");
+
+
+    function modalquestion() {
+        head.innerHTML = q11;
+        buttons.innerHTML = trueFalse;
+
+        $("#modal1").modal({
+            backdrop: false
+        });
+
+        var trueB = document.getElementById("truebtn");
+        var falseB = document.getElementById("falsebtn");
+
+        trueB.onclick = function() {
+            console.log("True-button clicked!");
+            head.innerHTML = c11 + btns;
+        }
+    };
+
+    modalquestion();
+
+</script>
+
+
+</html>
