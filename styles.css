@@ -3,14 +3,14 @@
 body {
     background-color: #e6e6e6;
     margin: 0;
-    height: 100vh;
+    height: 100%;
 }
 
 .content {
     width: 1300px;
     background-color: #fff;
     margin: auto;
-    height: 1000px;
+    height: 900px;
     border-radius: 19px 0px 0px 0px;
     padding: 35px 40px 35px 40px;
 }
@@ -23,15 +23,6 @@ body {
     animation: fadein 1s;
 }
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .container {
     margin: 0;
 }
@@ -42,6 +33,34 @@ body {
     font-size: 13px;
     margin-left: 150px;
     color: #4d4e50;
+}
+
+
+/* ANIMATIONS */
+
+
+/* fadein used for page load */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* appearElement used for secondary column headers & modals */
+@keyframes appearElement {
+    0% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 
@@ -83,6 +102,17 @@ p {
 }
 
 #nextpage:hover {
+    opacity: 0.8;
+}
+
+#nextpage2 {
+    float: right;
+    margin-right: -90px;
+    margin-top: -70px;
+    display: none;
+}
+
+#nextpage2:hover {
     opacity: 0.8;
 }
 
@@ -315,9 +345,9 @@ p.coltext {
     width: 800px;
     height: 650px;
     margin: auto;
-    margin-top: 300px;
     background-color: #e6e6e6;
     border-radius: 80px 0 80px 0;
+    animation: appearElement 0.5s;
 }
 
 .modal-header {
@@ -339,14 +369,14 @@ p.coltext {
     color: #fff;
     font-family: "Noto Sans";
     padding: 10px 20px 28px 10px;
-    font-size: 22px;
+    font-size: 21px;
     letter-spacing: 0.5px;
     width: 100%;
     line-height: 28px;
 }
 
 #headtxt {
-    margin-top: -100px;
+    margin-top: -60px;
 }
 
 .buttons {
@@ -413,6 +443,7 @@ b.btnText {
     color: #fff;
     text-align: center;
     margin-top: 2px;
+    animation: appearElement 0.3s;
 }
 
 #plus2 {

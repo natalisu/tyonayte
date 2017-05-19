@@ -53,7 +53,6 @@ $(function () {
             $('#head1').css('margin-top', '5px');
             document.getElementById("head1").innerHTML = altHead1;
 
-
             console.log("Dropped!");
             modalquestion(1);
         }
@@ -221,7 +220,7 @@ var c22 = "Correct! This statement is true. Other basic targets are shortest pos
 var i22 = "Incorrect. This statement is true. Other basic targets are shortest possible lead times from order to delivery and optimized levels of parts and finished goods inventories, while maintaining the targeted service levels, and minimal number of physical inventory locations while meeting the availability needs of the customers.";
 
 var q23 = "The target should always be minimizing the inventory.";
-var c23 = "Correct! This statement is not true.You should naturally minimize < b > excess < /b> inventory.However, inventory is needed and the optimal level varies depending on e.g. the agreed service levels, the cost of procurement and the criticality of the components.";
+var c23 = "Correct! This statement is not true. You should naturally minimize <b>excess</b> inventory.However, inventory is needed and the optimal level varies depending on e.g. the agreed service levels, the cost of procurement and the criticality of the components.";
 var i23 = "Incorrect. This statement is not true. You should naturally minimize <b>excess</b> inventory. However, inventory is needed and the optimal level varies depending on e.g. the agreed service levels, the cost of procurement and the criticality of the components.";
 
 
@@ -246,7 +245,7 @@ var q41 = "Advances are used to cover the financing recuirements of a delivery a
 var c41 = "Correct! This statement is true. Advances received are a way to help the company (supplier) to finance the capital tied to Work-In-Process (WIP) in project deliveries, which are typically far customized. Furthermore, especially in large projects which have a long lead time, the circumstances of the project or the buyer can change and it is important that we as the supplier secured our position throughout the project.";
 var i41 = "Incorrect. This statement is true. Advances received are a way to help the company (supplier) to finance the capital tied to Work-In-Process (WIP) in project deliveries, which are typically far customized. Furthermore, especially in large projects which have a long lead time, the circumstances of the project or the buyer can change and it is important that we as the supplier secured our position throughout the project.";
 
-var q42 = "A company’s basic principle is to ask for down payments only with large projects.";
+var q42 = "A company's basic principle is to ask for down payments only with large projects.";
 var c42 = "Correct! This statement is not true. Asking for down payments is important also with smaller deliveries especially when talking about customized solutions.";
 var i42 = "Incorrect. This statement is not true. Asking for down payments is important also with smaller deliveries especially when talking about customized solutions.";
 
@@ -256,7 +255,7 @@ var i43 = "Incorrect. This statement is true. Advances received also considerabl
 
 // BUTTONS
 
-var nextBtn = "<img class='nextbtn1' src='nextbtn1.png'><img class='nextbtn2' src='nextbtn2.png'>";
+var nextBtn = "<img class='nextbtn1' src='images/nextbtn1.png'><img class='nextbtn2' src='images/nextbtn2.png'>";
 var trueFalse = "<button class='trueFalse' id='truebtn' value='true' type='button'>True</button> <b class='btnText'>or</b> <button class='trueFalse' id='falsebtn' value='false' type='button'>False</button>";
 
 
@@ -268,11 +267,13 @@ var head = document.getElementById("headtxt");
 var buttons = document.getElementById("btns");
 var body = document.getElementById("bodytxt");
 var nextB = document.getElementById("nextbtn");
+var columnCount = 0;
 
 
 // DISPLAY QUESTION & TRUE/FALSE BUTTONS
 function displayQuestion(nextQ) {
     body.innerHTML = "";
+    nextB.innerHTML = "";
     head.innerHTML = nextQ;
     buttons.innerHTML = trueFalse;
 }
@@ -302,9 +303,7 @@ function displayAnswer(answer) {
 
 // DISPLAY MODAL
 function displayModal() {
-    $("#myModal").modal({
-        backdrop: false
-    });
+    $('#myModal').show();
 }
 
 // CALL FOR FUNCTIONS DEPENDING ON COLUMN NUMBER
@@ -315,12 +314,25 @@ function modalquestion(columnId) {
         displayQuestion(q11);
         displayModal();
         setColumn1();
+        columnCount++;
 
     } else if (columnId === 2) {
-        $('#myModal').show();
         displayQuestion(q21);
         displayModal();
         setColumn2();
+        columnCount++;
+
+    } else if (columnId === 3) {
+        displayQuestion(q31);
+        displayModal();
+        setColumn3();
+        columnCount++;
+
+    } else if (columnId === 4) {
+        displayQuestion(q41);
+        displayModal();
+        setColumn4();
+        columnCount++;
     }
 }
 
@@ -331,16 +343,21 @@ function setColumn1() {
     setAnswers(c11, i11);
 
     nextB.onclick = function () {
-        displayQuestion(q13);
-        setAnswers(i13, c13);
+        displayQuestion(q12);
+        setAnswers(c12, i12);
 
 
         nextB.onclick = function () {
-            displayQuestion(q12);
-            setAnswers(c12, i12);
+            displayQuestion(q13);
+            setAnswers(i13, c13);
 
             nextB.onclick = function () {
-                $('#myModal').modal('hide');
+                $('#myModal').hide();
+
+                if (columnCount === 4) {
+                    console.log("All columns done!");
+                    $('#nextpage2').css('display', 'inline');
+                }
 
             }
         }
@@ -353,16 +370,76 @@ function setColumn2() {
     setAnswers(c21, i21);
 
     nextB.onclick = function () {
-        displayQuestion(q23);
-        setAnswers(i23, c23);
+        displayQuestion(q22);
+        setAnswers(c22, i22);
 
 
         nextB.onclick = function () {
-            displayQuestion(q22);
-            setAnswers(c22, i22);
+            displayQuestion(q23);
+            setAnswers(i23, c23);
+
 
             nextB.onclick = function () {
                 $('#myModal').hide();
+
+                if (columnCount === 4) {
+                    console.log("All columns done!");
+                    $('#nextpage2').css('display', 'inline');
+                }
+
+            }
+        }
+    }
+}
+
+// QUESTIONS & ANSWERS IN COLUMN 3
+
+function setColumn3() {
+    setAnswers(c31, i31);
+
+    nextB.onclick = function () {
+        displayQuestion(q32);
+        setAnswers(c32, i32);
+
+
+        nextB.onclick = function () {
+            displayQuestion(q33);
+            setAnswers(i33, c33);
+
+            nextB.onclick = function () {
+                $('#myModal').hide();
+
+                if (columnCount === 4) {
+                    console.log("All columns done!");
+                    $('#nextpage2').css('display', 'inline');
+                }
+
+            }
+        }
+    }
+}
+
+// QUESTIONS & ANSWERS IN COLUMN 2
+
+function setColumn4() {
+    setAnswers(c41, i41);
+
+    nextB.onclick = function () {
+        displayQuestion(q42);
+        setAnswers(i42, c42);
+
+
+        nextB.onclick = function () {
+            displayQuestion(q43);
+            setAnswers(c43, i43);
+
+            nextB.onclick = function () {
+                $('#myModal').hide();
+
+                if (columnCount === 4) {
+                    console.log("All columns done!");
+                    $('#nextpage2').css('display', 'inline');
+                }
 
             }
         }
